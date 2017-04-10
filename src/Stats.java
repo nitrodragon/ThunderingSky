@@ -29,7 +29,7 @@ public class Stats implements BasesGalore {
     private static int fm = 0;
     private static int fs = 0;
 
-    private static int BaseHP = getCharacterClass(fa, fd, fm, fs)[0]; // Base stats for the character's class
+    private static int BaseHP = getCharacterClass(fa, fd, fm, fs)[0]; // Error here, don't mind it.
     private static int BaseAtk = villager[1];
     private static int BaseDef = villager[2];
     private static int BaseMag = villager[3];
