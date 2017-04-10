@@ -11,6 +11,7 @@ public class BaseCharacter {
 
     public BaseCharacter(String characterClass, int HP, int ATK, int DEF, int MAG, int SPD) {
         this.characterClass = characterClass;
+        this.HP = HP;
         this.ATK = ATK;
         this.DEF = DEF;
         this.MAG = MAG;
