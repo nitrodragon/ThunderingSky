@@ -4,32 +4,19 @@
 public interface BasesGalore {
 
     String[] classes = {
-            "villager",
-            "fighter", "guard", "spellcaster", "athlete",
-            "knight", "spellsword", "martial_artist", "cleric", "escapist", "expediter", "slayer", "defender", "magician", "guerrilla"
+            "villager", // 0-0-0-0 (base class)
+            "fighter", "guard", "spellcaster", "athlete", // 1 stat point
+            "knight", "spellsword", "martial_artist", "cleric", "escapist", "expediter", "slayer", "defender", "magician", "guerrilla" // 2 stat points
     };
 
-    int[] villager = {
-            50, 50, 50, 50, 50 // 50
-    };
+    static final BaseCharacter[] characters = {
+            new BaseCharacter("villager", 50, 50, 50, 50, 50),
+            new BaseCharacter("fighter", 60, 70, 50, 35, 35),
+            new BaseCharacter("guard", 80, 50, 80, 20, 40),
+            new BaseCharacter("spellcaster", 65, 20, 15, 105, 60),
+            new BaseCharacter("athlete", 65, 50, 50, 20, 80),
+            new BaseCharacter("knight", 80, 70, 50, 35, 35),
 
-    int[] fighter = {
-            60, 70, 50, 35, 35 // 50
-    };
 
-    int[] guard = {
-            80, 50, 80, 20, 40 // 54
-    };
-
-    int[] spellcaster = {
-            65, 20, 15, 105, 60 // 53
-    };
-
-    int[] athlete = {
-            65, 50, 50, 20, 80 // 53
-    };
-
-    int[] knight = {
-            80, 70, 50, 35, 35 //
     };
 }
