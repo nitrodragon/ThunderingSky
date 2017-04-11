@@ -8,13 +8,14 @@ public class BaseCharacter {
         this.characterClass = characterClass;
     }
 
-    public int HP;
-    public int ATK;
-    public int DEF;
-    public int MAG;
-    public int SPD;
+    private int HP;
+    private int ATK;
+    private int DEF;
+    private int MAG;
+    private int SPD;
 
-    public BaseCharacter(String characterClass, int HP, int ATK, int DEF, int MAG, int SPD) {
+
+    BaseCharacter(String characterClass, int HP, int ATK, int DEF, int MAG, int SPD) {
         this.characterClass = characterClass;
         this.HP = HP;
         this.ATK = ATK;
@@ -23,27 +24,27 @@ public class BaseCharacter {
         this.SPD = SPD;
     }
 
-    public String getCharacterClass() {
+    String getCharacterClass() {
         return characterClass;
     }
 
-    public int getHP() {
+    int getHP() {
         return HP;
     }
 
-    public int getATK() {
+    int getATK() {
         return ATK;
     }
 
-    public int getDEF() {
+    int getDEF() {
         return DEF;
     }
 
-    public int getMAG() {
+    int getMAG() {
         return MAG;
     }
 
-    public int getSPD() {
+    int getSPD() {
         return SPD;
     }
 

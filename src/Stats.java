@@ -35,7 +35,7 @@ public class Stats implements BasesGalore {
     private static int fm = 1;
     private static int fs = 0;
 
-    public static BaseCharacter getCharacter(int index) {
+    static BaseCharacter getCharacter(int index) {
         cc = characters[index].getCharacterClass();
         BaseHP = characters[index].getHP();
         BaseAtk = characters[index].getATK();
