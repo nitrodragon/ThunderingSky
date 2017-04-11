@@ -1,5 +1,3 @@
-// import nothing
-
 import static java.lang.Math.floor;
 
 public class BaseCharacter {
