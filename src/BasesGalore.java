@@ -14,7 +14,7 @@ public interface BasesGalore {
     static final int CLERIC = 8;
     static final int ESCAPIST = 9;
     static final int EXPEDITER = 10;
-    static final int SLAYER = 11;
+    static final int MERCENARY = 11;
     static final int DEFENDER = 12;
     static final int MAGICIAN = 13;
     static final int GUERRILLA = 14;
