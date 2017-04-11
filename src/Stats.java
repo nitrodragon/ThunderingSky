@@ -23,7 +23,7 @@ public class Stats implements BasesGalore {
         if (a == 0 && d == 1 && m == 1 && s == 0) {return CLERIC;}
         if (a == 0 && d == 1 && m == 0 && s == 1) {return ESCAPIST;}
         if (a == 0 && d == 0 && m == 1 && s == 1) {return EXPEDITER;}
-        if (a == 2 && d == 0 && m == 0 && s == 0) {return SLAYER;}
+        if (a == 2 && d == 0 && m == 0 && s == 0) {return MERCENARY;}
         if (a == 0 && d == 2 && m == 0 && s == 0) {return DEFENDER;}
         if (a == 0 && d == 0 && m == 2 && s == 0) {return MAGICIAN;}
         if (a == 0 && d == 0 && m == 0 && s == 2) {return GUERRILLA;}
