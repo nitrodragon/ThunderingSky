@@ -3,11 +3,7 @@ import static java.lang.Math.floor;
 public class BaseCharacter {
 
     private String characterClass;
-
-    public void setCharacterClass(String characterClass) {
-        this.characterClass = characterClass;
-    }
-
+    
     private int HP;
     private int ATK;
     private int DEF;
@@ -46,6 +42,10 @@ public class BaseCharacter {
 
     int getSPD() {
         return SPD;
+    }
+
+    public void setCharacterClass(String characterClass) {
+        this.characterClass = characterClass;
     }
 
     public void setHP(int base, int level, int iv, int ev) {
