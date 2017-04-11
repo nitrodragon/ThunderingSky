@@ -4,38 +4,48 @@ import static java.lang.Math.floor;
  */
 public class Stats implements BasesGalore {
 
+    private static int BaseHP;
+    private static int BaseAtk;
+    private static int BaseDef;
+    private static int BaseMag;
+    private static int BaseSpd;
+    private static String cc;
 
-    private static String getCharacterClass(int a, int d, int m, int s) {
-        if (a == 0 && d == 0 && m == 0 && s == 0) {return "villager";}
-        if (a == 1 && d == 0 && m == 0 && s == 0) {return "fighter";}
-        if (a == 0 && d == 1 && m == 0 && s == 0) {return "guard";}
-        if (a == 0 && d == 0 && m == 1 && s == 0) {return "spellcaster";}
-        if (a == 0 && d == 0 && m == 0 && s == 1) {return "athlete";}
-        if (a == 1 && d == 1 && m == 0 && s == 0) {return "knight";}
-        if (a == 1 && d == 0 && m == 1 && s == 0) {return "spellsword";}
-        if (a == 1 && d == 0 && m == 0 && s == 1) {return "martial_artist";}
-        if (a == 0 && d == 1 && m == 1 && s == 0) {return "cleric";}
-        if (a == 0 && d == 1 && m == 0 && s == 1) {return "escapist";}
-        if (a == 0 && d == 0 && m == 1 && s == 1) {return "expediter";}
-        if (a == 2 && d == 0 && m == 0 && s == 0) {return "slayer";}
-        if (a == 0 && d == 2 && m == 0 && s == 0) {return "defender";}
-        if (a == 0 && d == 0 && m == 2 && s == 0) {return "magician";}
-        if (a == 0 && d == 0 && m == 0 && s == 2) {return "guerrilla";}
-        else return "villager";
+    private static int getCharacterClass(int a, int d, int m, int s) {
+        if (a == 0 && d == 0 && m == 0 && s == 0) {return VILLAGER;}
+        if (a == 1 && d == 0 && m == 0 && s == 0) {return FIGHTER;}
+        if (a == 0 && d == 1 && m == 0 && s == 0) {return GUARD;}
+        if (a == 0 && d == 0 && m == 1 && s == 0) {return SPELLCASTER;}
+        if (a == 0 && d == 0 && m == 0 && s == 1) {return ATHLETE;}
+        if (a == 1 && d == 1 && m == 0 && s == 0) {return KNIGHT;}
+        if (a == 1 && d == 0 && m == 1 && s == 0) {return SPELLSWORD;}
+        if (a == 1 && d == 0 && m == 0 && s == 1) {return MARTIALARTIST;}
+        if (a == 0 && d == 1 && m == 1 && s == 0) {return CLERIC;}
+        if (a == 0 && d == 1 && m == 0 && s == 1) {return ESCAPIST;}
+        if (a == 0 && d == 0 && m == 1 && s == 1) {return EXPEDITER;}
+        if (a == 2 && d == 0 && m == 0 && s == 0) {return SLAYER;}
+        if (a == 0 && d == 2 && m == 0 && s == 0) {return DEFENDER;}
+        if (a == 0 && d == 0 && m == 2 && s == 0) {return MAGICIAN;}
+        if (a == 0 && d == 0 && m == 0 && s == 2) {return GUERRILLA;}
+        else return VILLAGER;
     }
 
-    private static int fa = 0;
+    private static int fa = 1;
     private static int fd = 0;
-    private static int fm = 0;
+    private static int fm = 1;
     private static int fs = 0;
 
-    private static int BaseHP = getCharacterClass(fa, fd, fm, fs)[0]; // Error here, don't mind it.
-    private static int BaseAtk = villager[1];
-    private static int BaseDef = villager[2];
-    private static int BaseMag = villager[3];
-    private static int BaseSpd = villager[4];
+    public static BaseCharacter getCharacter(int index) {
+        cc = characters[index].getCharacterClass();
+        BaseHP = characters[index].getHP();
+        BaseAtk = characters[index].getATK();
+        BaseDef = characters[index].getDEF();
+        BaseMag = characters[index].getMAG();
+        BaseSpd = characters[index].getSPD();
+        return characters[index];
+    }
 
-    private static int HpIV = 0; // Will be random ans static from the start of the game onward
+    private static int HpIV = 0; // Will be random and static from the start of the game onward
     private static int AtkIV = 0;
     private static int DefIV = 0;
     private static int MagIV = 0;
@@ -68,13 +78,14 @@ public class Stats implements BasesGalore {
     }
 
     public static void main(String[] args) {
+        getCharacter(getCharacterClass(fa, fd, fm, fs));
         setAllStats();
+        System.out.println(cc);
         System.out.println("Hp = " + Hp);
         System.out.println("Atk = " + Atk);
         System.out.println("Def = " + Def);
         System.out.println("Mag = " + Mag);
         System.out.println("Spd = " + Spd);
-
     }
 
 }
