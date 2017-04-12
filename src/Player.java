@@ -15,7 +15,7 @@ public class Player implements BasesGalore, Monsters  {
     BaseCharacter stats;
 
     Player(int fa, int fd, int fm, int fs) {
-        stats = getCharacter(getCharacterClass(fa, fd, fm, fs));
+        getCharacter(getCharacterClass(fa, fd, fm, fs));
         setAllStats();
         System.out.println("Welcome player, you are a " + cc + ".");
         System.out.println("Hp = " + Hp);
@@ -28,7 +28,6 @@ public class Player implements BasesGalore, Monsters  {
     }
 
     private int getCharacterClass(int a, int d, int m, int s) {
-        // C0
         if (a == 0 && d == 0 && m == 0 && s == 0) {return VILLAGER;}
         // C1
         if (a == 1 && d == 0 && m == 0 && s == 0) {return FIGHTER;}

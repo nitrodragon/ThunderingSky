@@ -33,7 +33,7 @@ public class Monster implements Monsters {
 
     void attack() {
         int tempHp;
-        tempHp = atk - (player.getDef() / 2); // Deal default damage minus half the players hp
+        tempHp = atk - (player.getDef() / 2); // Deal default damage minus half the players def
         if (tempHp < 1) {
             tempHp = 1; // Ensure the monster always deals at least 1 damage
         }
