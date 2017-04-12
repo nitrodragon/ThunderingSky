@@ -1,3 +1,5 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 import static java.lang.Math.floor;
 /**
  * Created by nitrodragon on 4/9/2017.
@@ -26,11 +28,14 @@ public class Player implements BasesGalore, Monsters  {
     }
 
     private int getCharacterClass(int a, int d, int m, int s) {
+        // C0
         if (a == 0 && d == 0 && m == 0 && s == 0) {return VILLAGER;}
+        // C1
         if (a == 1 && d == 0 && m == 0 && s == 0) {return FIGHTER;}
         if (a == 0 && d == 1 && m == 0 && s == 0) {return GUARD;}
         if (a == 0 && d == 0 && m == 1 && s == 0) {return SPELLCASTER;}
         if (a == 0 && d == 0 && m == 0 && s == 1) {return ATHLETE;}
+        // C2
         if (a == 1 && d == 1 && m == 0 && s == 0) {return KNIGHT;}
         if (a == 1 && d == 0 && m == 1 && s == 0) {return SPELLSWORD;}
         if (a == 1 && d == 0 && m == 0 && s == 1) {return MARTIALARTIST;}
@@ -41,6 +46,25 @@ public class Player implements BasesGalore, Monsters  {
         if (a == 0 && d == 2 && m == 0 && s == 0) {return DEFENDER;}
         if (a == 0 && d == 0 && m == 2 && s == 0) {return MAGICIAN;}
         if (a == 0 && d == 0 && m == 0 && s == 2) {return GUERRILLA;}
+        // C3
+        if (a == 1 && d == 1 && m == 1 && s == 0) {return PALADIN;}
+        if (a == 1 && d == 0 && m == 1 && s == 1) {return MONK;}
+        if (a == 1 && d == 1 && m == 0 && s == 1) {return CAVALIER;}
+        if (a == 1 && d == 2 && m == 0 && s == 0) {return SAMURAI;}
+        if (a == 0 && d == 2 && m == 0 && s == 1) {return ARMADILLO;}
+        if (a == 1 && d == 0 && m == 2 && s == 0) {return NECROMANCER;}
+        if (a == 0 && d == 1 && m == 2 && s == 0) {return DIVINER;}
+        if (a == 0 && d == 0 && m == 2 && s == 1) {return CONJUROR;}
+        if (a == 0 && d == 1 && m == 0 && s == 2) {return SPY;}
+        if (a == 1 && d == 0 && m == 0 && s == 2) {return DRAGOON;}
+        if (a == 0 && d == 0 && m == 1 && s == 2) {return TIMEMAGE;}
+        if (a == 3 && d == 0 && m == 0 && s == 0) {return DEATHBRINGER;}
+        if (a == 0 && d == 3 && m == 0 && s == 0) {return IRONSIDE;}
+        if (a == 0 && d == 0 && m == 3 && s == 0) {return ELEMANCER;}
+        if (a == 0 && d == 0 && m == 0 && s == 3) {return VELOXLUX;}
+        if (a == 2 && d == 1 && m == 0 && s == 0) {return GLADIATOR;}
+        if (a == 2 && d == 0 && m == 1 && s == 0) {return SOULEATER;}
+        if (a == 2 && d == 0 && m == 0 && s == 1) {return ASSASSIN;}
         else return VILLAGER;
     }
 
@@ -56,17 +80,17 @@ public class Player implements BasesGalore, Monsters  {
 
     // TODO Implement these
 
-    private int HpIV = 0; // Will be random and from the start of the game onward
-    private int AtkIV = 0;
-    private int DefIV = 0;
-    private int MagIV = 0;
-    private int SpdIV = 0;
+    private int HpIV = ThreadLocalRandom.current().nextInt(0, 16); // Will be random and from the start of the game onward
+    private int AtkIV = ThreadLocalRandom.current().nextInt(0, 16);
+    private int DefIV = ThreadLocalRandom.current().nextInt(0, 16);
+    private int MagIV = ThreadLocalRandom.current().nextInt(0, 16);
+    private int SpdIV = ThreadLocalRandom.current().nextInt(0, 16);
 
     private int HpEV = 0; // Will constantly go up throughout the game
     private int AtkEV = 0;
     private int DefEV = 0;
     private int MagEV = 0;
-    private int SpdEV = 0;
+    private int SpdEV = 0;// Also, they're gonna be awarded by the monsters, so we've gotta implement these ASAP.
 
     private int level = 10; // Will constantly go up throughout the game
 
@@ -89,6 +113,8 @@ public class Player implements BasesGalore, Monsters  {
     }
 
     // Getters and Setters
+
+    int getLevel() { return level; }
 
     int getHp() {
         return Hp;
