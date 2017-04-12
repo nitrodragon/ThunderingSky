@@ -1,3 +1,5 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 import static java.lang.Math.ceil;
 
 public class Monster implements Monsters {
@@ -63,6 +65,17 @@ public class Monster implements Monsters {
         } else {
             System.out.println("Monster dead");
         }
+    }
+
+
+    // damageFormula
+    int damageFormula() {
+        int power = 15; // Implementing 15 here in place of a weapon!
+        int playerLevel = player.getLevel();
+        int playerAtk = player.getAtk();
+        int monsterDef = def;
+        double modifier = ThreadLocalRandom.current().nextDouble(0.85, 1.0);
+        return (int) Math.floor((((((2 * playerLevel) / 5) + 2) * power * (playerAtk / monsterDef) / 50) + 2) * modifier);
     }
 
 }
