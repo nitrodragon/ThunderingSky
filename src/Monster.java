@@ -2,12 +2,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Math.floor;
 
-public class Monster implements Monsters {
+class Monster implements Monsters {
 
     private int hp;
     private int atk;
     private int def;
-    private int spd;
     private int reward;
 
     private String name;
@@ -16,17 +15,16 @@ public class Monster implements Monsters {
     private Player player;
 
     Monster(Player player, int monsterName, boolean isMagic) { // Constructor will take a player instance later
-        BaseMonster tempMonster = monsters[monsterName];
-        this.hp = tempMonster.getHP();
-        this.atk = tempMonster.getATK();
-        this.def = tempMonster.getDEF();
-        this.spd = tempMonster.getSPD();
-        this.name = tempMonster.getName();
-        this.reward = tempMonster.getReward();
+        BaseMonster mnst = monsters[monsterName];
+        this.hp = mnst.getHP();
+        this.atk = mnst.getATK();
+        this.def = mnst.getDEF();
+        this.name = mnst.getName();
+        this.reward = mnst.getReward();
         this.player = player;
         this.isMagic = isMagic;
         System.out.println("\nA " + name + " is approaching!");
-        if (spd > player.getSpd()) {
+        if (mnst.getSPD() > player.getSpd()) {
             attack();
         } else {
             defend();

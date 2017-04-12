@@ -1,4 +1,4 @@
-public class BaseMonster {
+class BaseMonster {
 
     private String name;
     private int HP;
@@ -17,47 +17,47 @@ public class BaseMonster {
         this.reward = reward;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public int getHP() {
+    int getHP() {
         return HP;
     }
 
-    public int getATK() {
+    int getATK() {
         return ATK;
     }
 
-    public int getDEF() {
+    int getDEF() {
         return DEF;
     }
 
-    public int getSPD() {
+    int getSPD() {
         return SPD;
     }
 
-    public void setHP(int HP) {
+    void setHP(int HP) {
         this.HP = HP;
     }
 
-    public void setATK(int ATK) {
+    void setATK(int ATK) {
         this.ATK = ATK;
     }
 
-    public void setDEF(int DEF) {
+    void setDEF(int DEF) {
         this.DEF = DEF;
     }
 
-    public void setSPD(int SPD) {
+    void setSPD(int SPD) {
         this.SPD = SPD;
     }
 
-    public int getReward() {
+    int getReward() {
         return reward;
     }
 }

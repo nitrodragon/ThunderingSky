@@ -1,4 +1,4 @@
-public interface BasesGalore {
+interface BasesGalore {
 
     // ATK, DEF, MAG, SPD
 

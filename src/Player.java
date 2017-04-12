@@ -1,9 +1,7 @@
 import java.util.concurrent.ThreadLocalRandom;
 import static java.lang.Math.floor;
-/**
- * Created by nitrodragon on 4/9/2017.
- */
-public class Player implements BasesGalore, Monsters {
+
+class Player implements BasesGalore, Monsters {
 
     private int BaseHP;
     private int BaseAtk;
@@ -14,7 +12,7 @@ public class Player implements BasesGalore, Monsters {
     BaseCharacter stats;
 
     Player(int fa, int fd, int fm, int fs) {
-        getCharacter(getCharacterClass(fa, fd, fm, fs));
+        stats = getCharacter(getCharacterClass(fa, fd, fm, fs));
         resetStats();
         System.out.println("Welcome player, you are a " + cc + ".");
         System.out.println("Hp = " + getHp());
@@ -150,8 +148,6 @@ public class Player implements BasesGalore, Monsters {
         return characters[index];
     }
 
-    // TODO Implement these
-
     private double HpIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2); // Will be random and from the start of the game onward
     private double AtkIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2);
     private double DefIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2);
@@ -221,22 +217,6 @@ public class Player implements BasesGalore, Monsters {
 
     void setHp(int hp) {
         Hp = hp;
-    }
-
-    void setAtk(int atk) {
-        Atk = atk;
-    }
-
-    void setDef(int def) {
-        Def = def;
-    }
-
-    void setMag(int mag) {
-        Mag = mag;
-    }
-
-    void setSpd(int spd) {
-        Spd = spd;
     }
 
     void setHpEV(int hpEV) {

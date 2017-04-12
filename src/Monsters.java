@@ -1,4 +1,4 @@
-public interface Monsters {
+interface Monsters {
     int SLIME = 0;
     int BAT = 1;
     int ZOMBIE = 2;
