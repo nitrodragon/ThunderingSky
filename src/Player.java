@@ -51,6 +51,7 @@ public class Player implements BasesGalore, Monsters  {
         if (a == 1 && d == 0 && m == 1 && s == 1) {return MONK;}
         if (a == 1 && d == 1 && m == 0 && s == 1) {return CAVALIER;}
         if (a == 1 && d == 2 && m == 0 && s == 0) {return SAMURAI;}
+        if (a == 0 && d == 2 && m == 1 && s == 0) {return SHELLCASTER;}
         if (a == 0 && d == 2 && m == 0 && s == 1) {return ARMADILLO;}
         if (a == 1 && d == 0 && m == 2 && s == 0) {return NECROMANCER;}
         if (a == 0 && d == 1 && m == 2 && s == 0) {return DIVINER;}
