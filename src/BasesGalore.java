@@ -15,25 +15,25 @@ public interface BasesGalore {
     int DEFENDER = 12; // 0200
     int MAGICIAN = 13; // 0020
     int GUERRILLA = 14; // 0002
-//    int PALADIN = 15; // 1110
-//    int MONK = 16; // 1011
-//    int CAVALIER = 17; // 1101
-//    int SAMURAI = 18; // 1200
-//    int SHELLCASTER = 19; // 0210
-//    int ARMADILLO = 20; // 0201
-//    int NECROMANCER = 21; // 1020
-//    int DIVINER = 22; // 0120
-//    int CONJUROR = 23; // 0021
-//    int SPY = 24; // 0102
-//    int DRAGOON = 25; // 1002
-//    int TIMEMAGE = 26; // 0012
-//    int DEATHBRINGER = 27; // 3000
-//    int IRONSIDE = 28; // 0300
-//    int ELEMANCER = 29; // 0030
-//    int VELOXLUX = 30; // 0003
-//    int GLADIATOR = 31; // 2100
-//    int SOULEATER = 32; // 2010
-//    int ASSASSIN = 33; // 2001
+    int PALADIN = 15; // 1110
+    int MONK = 16; // 1011
+    int CAVALIER = 17; // 1101
+    int SAMURAI = 18; // 1200
+    int SHELLCASTER = 19; // 0210
+    int ARMADILLO = 20; // 0201
+    int NECROMANCER = 21; // 1020
+    int DIVINER = 22; // 0120
+    int CONJUROR = 23; // 0021
+    int SPY = 24; // 0102
+    int DRAGOON = 25; // 1002
+    int TIMEMAGE = 26; // 0012
+    int DEATHBRINGER = 27; // 3000
+    int IRONSIDE = 28; // 0300
+    int ELEMANCER = 29; // 0030
+    int VELOXLUX = 30; // 0003
+    int GLADIATOR = 31; // 2100
+    int SOULEATER = 32; // 2010
+    int ASSASSIN = 33; // 2001
 
 
     // The comments here signify the average stats for each class. 40 for Class 0, 51-53 for Class 1, 68-72 for Class 2, TBD (90?) for Class 3.
