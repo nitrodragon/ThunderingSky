@@ -53,7 +53,7 @@ public interface BasesGalore {
 
             new BaseCharacter("Knight", 90, 85, 85, 35, 45), // 69
             new BaseCharacter("Spellsword", 75, 75, 30, 130, 45), // 71
-            new BaseCharacter("Martial_artist", 80, 85, 60, 40, 90), // 71
+            new BaseCharacter("Martial Artist", 80, 85, 60, 40, 90), // 71
             new BaseCharacter("Cleric", 90, 30, 75, 110, 40), // 69
             new BaseCharacter("Escapist", 85, 45, 85, 35, 90), // 68
             new BaseCharacter("Expediter", 70, 60, 85, 100, 45), // 72
@@ -71,5 +71,11 @@ public interface BasesGalore {
             new BaseCharacter("Elemancer", 90, 40, 55, 140, 50), //
             new BaseCharacter("Veloxlux", 100, 70, 70, 50, 200), //
             new BaseCharacter("Gladiator", 115, 120, 150, 10, 25), //
+            new BaseCharacter("Soul Eater", 115, 120, 150, 10, 25), //
+            new BaseCharacter("Assassin", 115, 120, 150, 10, 25), //
+            new BaseCharacter("Samurai", 115, 120, 150, 10, 25), //
+            new BaseCharacter("Shellcaster", 115, 120, 150, 10, 25), //
+            new BaseCharacter("Armadillo", 115, 120, 150, 10, 25), //
+            new BaseCharacter("Gladiator", 115, 120, 150, 10, 25)
     };
 }

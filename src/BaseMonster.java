@@ -5,14 +5,16 @@ public class BaseMonster {
     private int ATK;
     private int DEF;
     private int SPD;
+    private int reward;
     // Maybe implement a magic option later?
 
-    BaseMonster (String name, int HP, int ATK, int DEF, int SPD) {
+    BaseMonster (String name, int HP, int ATK, int DEF, int SPD, int reward) {
         this.name = name;
         this.HP = HP;
         this.ATK = ATK;
         this.DEF = DEF;
         this.SPD = SPD;
+        this.reward = reward;
     }
 
     public String getName() {
@@ -53,5 +55,9 @@ public class BaseMonster {
 
     public void setSPD(int SPD) {
         this.SPD = SPD;
+    }
+
+    public int getReward() {
+        return reward;
     }
 }

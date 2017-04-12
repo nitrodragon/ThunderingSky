@@ -8,9 +8,10 @@ public class Monster implements Monsters {
     private int atk;
     private int def;
     private int spd;
+    private int reward;
 
-    String name;
-    boolean isMagic;
+    private String name;
+    private boolean isMagic;
 
     private Player player;
 
@@ -21,6 +22,7 @@ public class Monster implements Monsters {
         this.def = tempMonster.getDEF();
         this.spd = tempMonster.getSPD();
         this.name = tempMonster.getName();
+        this.reward = tempMonster.getReward();
         this.player = player;
         this.isMagic = isMagic;
         System.out.println("\nA " + name + " is approaching!");
@@ -31,7 +33,7 @@ public class Monster implements Monsters {
         }
     }
 
-    void attack() {
+    private void attack() {
         int tempHp;
         tempHp = atk - (player.getDef() / 2); // Deal default damage minus half the players def
         if (tempHp < 1) {
@@ -47,7 +49,7 @@ public class Monster implements Monsters {
         }
     }
 
-    void defend() {
+    private void defend() {
         int tempHp;
         if (isMagic) {
             tempHp = player.getMag() - def; // Magic deals less damage, but armor better armor penetration
@@ -64,12 +66,37 @@ public class Monster implements Monsters {
             attack();
         } else {
             System.out.println("Monster dead");
+            earnXp();
         }
     }
 
+    private void earnXp() {
+        for (int i = 0; i < reward; i++) {
+            switch(ThreadLocalRandom.current().nextInt(0,5)) {
+                case 0:
+                    player.setHpEV(player.getHpEV() + 1);
+                    break;
+                case 1:
+                    player.setAtkEV(player.getAtkEV() + 1);
+                    break;
+                case 2:
+                    player.setDefEV(player.getDefEV() + 1);
+                    break;
+                case 3:
+                    player.setMagEV(player.getMagEV() + 1);
+                    break;
+                case 4:
+                    player.setSpdEV(player.getSpdEV() + 1);
+                    break;
+                default:
+                    player.setHpEV(player.getHpEV() + 1);
+                    break;
+            }
+        }
+    }
 
     // damageFormula
-    int damageFormula() {
+    private int damageFormula() {
         int power = 15; // Implementing 15 here in place of a weapon!
         int playerLevel = player.getLevel();
         int playerAtk = player.getAtk();
