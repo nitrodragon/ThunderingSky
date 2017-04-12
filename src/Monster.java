@@ -1,6 +1,6 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-import static java.lang.Math.ceil;
+import static java.lang.Math.floor;
 
 public class Monster implements Monsters {
 
@@ -75,7 +75,7 @@ public class Monster implements Monsters {
         int playerAtk = player.getAtk();
         int monsterDef = def;
         double modifier = ThreadLocalRandom.current().nextDouble(0.85, 1.0);
-        return (int) Math.floor((((((2 * playerLevel) / 5) + 2) * power * (playerAtk / monsterDef) / 50) + 2) * modifier);
+        return (int) floor((((((2 * playerLevel) / 5) + 2) * power * (playerAtk / monsterDef) / 50) + 2) * modifier);
     }
 
 }
