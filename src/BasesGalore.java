@@ -62,8 +62,8 @@ interface BasesGalore {
             new BaseCharacter("Magician", 65, 55, 40, 150, 40), // 71
             new BaseCharacter("Guerrilla", 85, 80, 65, 15, 110), // 71
 
-            new BaseCharacter("Paladin", 110, 80, 65, 15, 110), //
-            new BaseCharacter("Archer", 90, 80, 65, 15, 110), //
+            new BaseCharacter("Paladin", 110, 95, 100, 80, 30), // 83
+            new BaseCharacter("Archer", 95, 120, 80, 40, 100), // 87
             new BaseCharacter("Cavalier", 100, 80, 65, 15, 110), //
             new BaseCharacter("Monk", 85, 80, 65, 15, 110), //
             new BaseCharacter("Deathbringer", 100, 150, 65, 15, 50), // 76
@@ -76,6 +76,12 @@ interface BasesGalore {
             new BaseCharacter("Samurai", 115, 120, 150, 10, 25), //
             new BaseCharacter("Shellcaster", 115, 120, 150, 10, 25), //
             new BaseCharacter("Armadillo", 115, 120, 150, 10, 25), //
-            new BaseCharacter("Gladiator", 115, 120, 150, 10, 25)
+            new BaseCharacter("Necromancer", 115, 120, 150, 10, 25),
+            new BaseCharacter("Diviner", 115, 120, 150, 10, 25),
+            new BaseCharacter("Conjuror", 115, 120, 150, 10, 25),
+            new BaseCharacter("Spy", 115, 120, 150, 10, 25),
+            new BaseCharacter("Dragoon", 115, 120, 150, 10, 25),
+            new BaseCharacter("Gladiator", 115, 120, 150, 10, 25),
+            new BaseCharacter("Timemage", 115, 120, 150, 10, 25)
     };
 }
