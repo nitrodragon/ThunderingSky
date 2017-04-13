@@ -11,13 +11,14 @@ class Player implements BasesGalore, Monsters {
     private int BaseSpd;
     private String cc;
     private BaseCharacter stats;
+    private int Level = 90;
 
     // Will be random and from the start of the game onward
-    private double HpIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2);
-    private double AtkIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2);
-    private double DefIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2);
-    private double MagIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2);
-    private double SpdIV = ThreadLocalRandom.current().nextDouble(0.8, 1.2);
+    private int HpIV = ThreadLocalRandom.current().nextInt(0, 16);
+    private int AtkIV = ThreadLocalRandom.current().nextInt(0, 16);
+    private int DefIV = ThreadLocalRandom.current().nextInt(0, 16);
+    private int MagIV = ThreadLocalRandom.current().nextInt(0, 16);
+    private int SpdIV = ThreadLocalRandom.current().nextInt(0, 16);
 
     // Will constantly go up throughout the game
     private int HpEV = 0;
@@ -25,15 +26,14 @@ class Player implements BasesGalore, Monsters {
     private int DefEV = 0;
     private int MagEV = 0;
     private int SpdEV = 0;
-    private int level = 1;
 
     // Stats that can change
-    private int Hp, Atk, Def, Mag, Spd;
+    private int Hp, Atk, Def, Mag, Spd, level;
 
     Player(int fa, int fd, int fm, int fs) {
         stats = getCharacter(getCharacterClass(fa, fd, fm, fs));
         resetStats();
-        System.out.println("Welcome player, you are a " + cc + ".");
+        System.out.println("Welcome player, you are a " + cc + ". " + "At level " + level + ".");
         System.out.println("Hp = " + getHp());
         System.out.println("Atk = " + getAtk());
         System.out.println("Def = " + getDef());
@@ -97,15 +97,16 @@ class Player implements BasesGalore, Monsters {
         return characters[index];
     }
 
-    private int getHPStat(int base, int level, int ev) {
-        return (int) floor(((base * 2 + ((Math.sqrt(ev) / 4))) * level) / 100) + level + 10; // Hecka long formula
+    private int getHPStat(int base, int level, int iv, int ev) {
+        return (int) floor((((base + iv) * 2 + ((Math.sqrt(ev) / 4))) * level) / 100) + level + 10; // Hecka long formula
     }
 
-    private int getOtherStat(int base, int level, int ev) {
-        return (int) floor(((base * 2 + ((Math.sqrt(ev) / 4))) * level) / 100) + 5; // Hecka long formula
+    private int getOtherStat(int base, int level, int iv, int ev) {
+        return (int) floor((((base + iv) * 2 + ((Math.sqrt(ev) / 4))) * level) / 100) + 5; // Hecka long formula
     }
 
     private void resetStats() {
+        level = Level;
         Hp = BaseHP;
         Atk = BaseAtk;
         Def = BaseDef;
@@ -114,11 +115,11 @@ class Player implements BasesGalore, Monsters {
     }
 
     private void setAllStats() {
-        Hp = getHPStat(BaseHP, level, HpEV);
-        Atk = getOtherStat(BaseAtk, level, AtkEV);
-        Def = getOtherStat(BaseDef, level, DefEV);
-        Mag = getOtherStat(BaseMag, level, MagEV);
-        Spd = getOtherStat(BaseSpd, level, SpdEV);
+        Hp = getHPStat(BaseHP, Level, HpIV, HpEV);
+        Atk = getOtherStat(BaseAtk, Level, AtkIV, AtkEV);
+        Def = getOtherStat(BaseDef, Level, DefIV, DefEV);
+        Mag = getOtherStat(BaseMag, Level, MagIV, MagEV);
+        Spd = getOtherStat(BaseSpd, Level, SpdIV, SpdEV);
     }
 
     // Getters and Setters
@@ -127,24 +128,20 @@ class Player implements BasesGalore, Monsters {
     }
 
     int getHp() {
-        return (int) Math.floor(Hp * HpIV);
+        return Hp;
     }
 
-    int getAtk() {
-        return (int) Math.floor(Atk * AtkIV);
-    }
+    int getAtk() { return Atk; }
 
     int getDef() {
-        return (int) Math.floor(Def * DefIV);
+        return Def;
     }
 
     int getMag() {
-        return (int) Math.floor(Mag * MagIV);
+        return Mag;
     }
 
-    int getSpd() {
-        return (int) Math.floor(Spd * SpdIV);
-    }
+    int getSpd() { return Spd; }
 
     void setHp(int hp) {
         Hp = hp;
