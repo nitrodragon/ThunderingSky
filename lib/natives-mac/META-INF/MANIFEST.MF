@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: 1.7.0_65-b19 (Oracle Corporation)
+
+Name: openal.dylib
+SHA-256-Digest: 2EX6si/VhCXer7yxpVJjO0pivV36J7kmPAUNkaP62MA=
+
+Name: liblwjgl.dylib
+SHA-256-Digest: TpUSr8CqCDHMclkYUsR8gExX7RO9Srm6OseYZQYW2w4=
+
+Name: libjinput-osx.dylib
+SHA-256-Digest: 0VXCnPp9e0nKsIIdW6AKj9yLOGyL9WafAxOmLkS6cNY=
+

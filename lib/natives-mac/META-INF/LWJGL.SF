@@ -1,0 +1,15 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 4qGIDsjmf8ZDczflwSf6tIdbOjZZq
+ 9qEfMQx6QzRtnQ=
+SHA-256-Digest-Manifest: J+r1FbKs55HSWUjXc7bgzgNpHXUTP2VrvauJ7by9/5I=
+Created-By: 1.7.0_65 (Oracle Corporation)
+
+Name: openal.dylib
+SHA-256-Digest: gAyTEUjv6AzKYqZ5FcgwubYS25HriVTsc1sg4XETI/8=
+
+Name: liblwjgl.dylib
+SHA-256-Digest: cVoF2wABgck+OTPdXhffMzwaCl/dQoTSkkMklFSQU20=
+
+Name: libjinput-osx.dylib
+SHA-256-Digest: lQQkGRkPznra/6DI4hCBqMPFAHRM2bjBOMa0CpaVXJg=
+
