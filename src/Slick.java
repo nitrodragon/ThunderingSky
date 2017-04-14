@@ -22,6 +22,8 @@ public class Slick extends StateBasedGame {
         AppGameContainer appgc;
         try{
             appgc = new AppGameContainer(new Slick(gamename));
+//            appgc.setShowFPS(false);
+            appgc.setVSync(true);
             appgc.setDisplayMode(xSize, ySize, false);
             appgc.setTargetFrameRate(60);
             appgc.start();
