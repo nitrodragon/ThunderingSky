@@ -16,8 +16,9 @@ public class Play extends BasicGameState implements InputProviderListener {
     private BasicCommand down = new BasicCommand("down");
     private BasicCommand left = new BasicCommand("left");
     private BasicCommand right = new BasicCommand("right");
+    private BasicCommand enter = new BasicCommand("enter");
     private int pointer = 0;
-    Rectangle[] rect = new Rectangle[4];
+    private Rectangle[] rect = new Rectangle[4];
 
     Play() {
 
@@ -35,6 +36,7 @@ public class Play extends BasicGameState implements InputProviderListener {
         provider.bindCommand(new KeyControl(Input.KEY_DOWN), down);
         provider.bindCommand(new KeyControl(Input.KEY_LEFT), left);
         provider.bindCommand(new KeyControl(Input.KEY_RIGHT), right);
+        provider.bindCommand(new KeyControl(Input.KEY_ENTER), enter);
 
         for (int i = 0; i < rect.length; i++) {
             rect[i] = new Rectangle(100, 20 + (70 * i), statValues[i] * 40, 20);
@@ -72,11 +74,13 @@ public class Play extends BasicGameState implements InputProviderListener {
                 statValues[pointer]++;
                 rect[pointer].setWidth(statValues[pointer] * 40);
             }
-        } else {
+        } else if (command.toString().equals("[Command=left]")) {
             if (statValues[pointer] > 0) {
                 statValues[pointer]--;
                 rect[pointer].setWidth(statValues[pointer] * 40);
             }
+        } else {
+            Player player = new Player(statValues[0],statValues[1],statValues[2],statValues[3]);
         }
     }
 
