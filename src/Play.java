@@ -1,5 +1,6 @@
 import org.newdawn.slick.*;
 import org.newdawn.slick.command.*;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.*;
 import java.awt.Font;
 import org.newdawn.slick.TrueTypeFont;
@@ -7,11 +8,16 @@ import org.newdawn.slick.TrueTypeFont;
 public class Play extends BasicGameState implements InputProviderListener {
 
     private float frame = 0;
-    private TrueTypeFont ttf;
-    private InputProvider provider;
+    private TrueTypeFont active;
+    private TrueTypeFont inactive;
+    private String[] statNames = {"Attack: ", "Defence: ", "Magic: ", "Speed: "};
+    private int[] statValues = {0, 0, 0, 0};
     private BasicCommand up = new BasicCommand("up");
     private BasicCommand down = new BasicCommand("down");
-    int msg = 0;
+    private BasicCommand left = new BasicCommand("left");
+    private BasicCommand right = new BasicCommand("right");
+    private int pointer = 0;
+    Rectangle[] rect = new Rectangle[4];
 
     Play() {
 
@@ -19,35 +25,58 @@ public class Play extends BasicGameState implements InputProviderListener {
 
     public void init(GameContainer gc, StateBasedGame sbg)
             throws SlickException {
-        provider = new InputProvider(gc.getInput());
+        InputProvider provider = new InputProvider(gc.getInput());
         provider.addListener(this);
-        Font font = new Font("Helvetica", Font.BOLD, 24);
-        ttf = new TrueTypeFont(font, true);
+        Font finactive = new Font("Helvetica", Font.PLAIN, 20);
+        Font factive = new Font("Helvetica", Font.BOLD, 24);
+        active = new TrueTypeFont(factive, true);
+        inactive = new TrueTypeFont(finactive, true);
         provider.bindCommand(new KeyControl(Input.KEY_UP), up);
         provider.bindCommand(new KeyControl(Input.KEY_DOWN), down);
+        provider.bindCommand(new KeyControl(Input.KEY_LEFT), left);
+        provider.bindCommand(new KeyControl(Input.KEY_RIGHT), right);
+
+        for (int i = 0; i < rect.length; i++) {
+            rect[i] = new Rectangle(100, 20 + (70 * i), statValues[i] * 40, 20);
+        }
     }
 
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
             throws SlickException {
-        frame += 0.1;
-        ttf.drawString( 20, (float)Math.sin(frame) * 10 + 150, "Defence: " + Integer.toString(msg));
+        for (int i = 0; i < statNames.length; i++) {
+            if (pointer == i) {
+                // + (float)Math.sin(frame * 25)
+                active.drawString(20, 20 + (70 * i), statNames[i] + statValues[i]);
+            } else {
+                inactive.drawString(20, 20 + (70 * i), statNames[i]);
+            }
+//            g.setColor(Color.white);
+//            g.fill(rect[i]);
+            if (statValues[i] > 0) g.draw(rect[i]);
+        }
     }
 
     public void update(GameContainer gc, StateBasedGame sbg, int delta)
             throws SlickException {
+        frame += 0.01;
     }
 
     @Override
     public void controlPressed(Command command) {
-        if (command.toString().equals("[Command=up]")) {
-            msg++;
+        if (command.toString().equals("[Command=down]")) {
+            if (pointer < 3) pointer++;
+        } else if (command.toString().equals("[Command=up]")){
+            if (pointer > 0) pointer--;
+        } else if (command.toString().equals("[Command=right]")) {
+            if (statValues[pointer] < 3) {
+                statValues[pointer]++;
+                rect[pointer].setWidth(statValues[pointer] * 40);
+            }
         } else {
-            msg--;
-        }
-        if (msg < 0) {
-            msg = 0;
-        } else if (msg > 3) {
-            msg = 3;
+            if (statValues[pointer] > 0) {
+                statValues[pointer]--;
+                rect[pointer].setWidth(statValues[pointer] * 40);
+            }
         }
     }
 
