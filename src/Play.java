@@ -19,6 +19,7 @@ public class Play extends BasicGameState implements InputProviderListener {
     private BasicCommand enter = new BasicCommand("enter");
     private int pointer = 0;
     private Rectangle[] rect = new Rectangle[4];
+    StateBasedGame sb;
 
     Play() {
 
@@ -26,6 +27,7 @@ public class Play extends BasicGameState implements InputProviderListener {
 
     public void init(GameContainer gc, StateBasedGame sbg)
             throws SlickException {
+        sb = sbg;
         InputProvider provider = new InputProvider(gc.getInput());
         provider.addListener(this);
         Font finactive = new Font("Helvetica", Font.PLAIN, 20);
@@ -81,6 +83,7 @@ public class Play extends BasicGameState implements InputProviderListener {
             }
         } else {
             Player player = new Player(statValues[0],statValues[1],statValues[2],statValues[3]);
+            sb.enterState(2);
         }
     }
 
