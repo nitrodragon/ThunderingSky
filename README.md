@@ -4,7 +4,7 @@ Thundering Sky is an in-development Japanese-Style Role Playing Game reminiscent
 
 The game is currently in its alpha phase, as we're still in our first week.
 
-© 2017 nitrodragon, EthanBar22, SirNectarine
+© 2017 nitrodragon, EthanBar22, SirNectarine, yoshimelon24
 
 
 ## How to compile and build
