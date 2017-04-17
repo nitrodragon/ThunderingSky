@@ -1,3 +1,5 @@
+package com.thunder.sky;
+
 interface Monsters {
     int SLIME = 0;
     int BAT = 1;
@@ -5,7 +7,7 @@ interface Monsters {
     int WRATH = 3;
 
     BaseMonster[] monsters = {
-            // So, are we gonna have a static HP for the Monsters? No calculation. That could work. I have a damage formula, so we'll have to put that in here soon.
+            // So, are we gonna have a static HP for the com.thunder.sky.Monsters? No calculation. That could work. I have a damage formula, so we'll have to put that in here soon.
             new BaseMonster("Slime", 30, 5, 2, 10, 1),
             new BaseMonster("Bat", 20, 10, 2, 30, 1),
             new BaseMonster("Zombie", 60, 7, 5, 5, 2),

@@ -1,9 +1,12 @@
+package com.thunder.sky.GUI;
+
 import org.newdawn.slick.*;
 import org.newdawn.slick.command.*;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.*;
 import java.awt.Font;
 import org.newdawn.slick.TrueTypeFont;
+import com.thunder.sky.Player;
 
 public class Play extends BasicGameState implements InputProviderListener {
 
@@ -82,7 +85,7 @@ public class Play extends BasicGameState implements InputProviderListener {
                 rect[pointer].setWidth(statValues[pointer] * 40);
             }
         } else {
-            Player player = new Player(statValues[0],statValues[1],statValues[2],statValues[3]);
+            Player player = new Player(statValues[0], statValues[1], statValues[2], statValues[3]);
             sb.enterState(2);
         }
     }

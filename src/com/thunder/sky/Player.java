@@ -1,7 +1,9 @@
+package com.thunder.sky;
+
 import java.util.concurrent.ThreadLocalRandom;
 import static java.lang.Math.floor;
 
-class Player implements BasesGalore, Monsters {
+public class Player implements BasesGalore, Monsters {
 
     // These are the default class values, non-unique
     private int BaseHP;
@@ -30,7 +32,7 @@ class Player implements BasesGalore, Monsters {
     // Stats that can change
     private int Hp, Atk, Def, Mag, Spd, level;
 
-    Player(int fa, int fd, int fm, int fs) {
+    public Player(int fa, int fd, int fm, int fs) {
         stats = getCharacter(getCharacterClass(fa, fd, fm, fs));
         resetStats();
         System.out.println("Welcome player, you are a " + cc + ". " + "At level " + level + ".");

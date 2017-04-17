@@ -1,3 +1,5 @@
+package com.thunder.sky;
+
 class BaseMonster {
 
     private String name;

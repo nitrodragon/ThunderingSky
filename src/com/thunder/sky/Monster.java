@@ -1,3 +1,5 @@
+package com.thunder.sky;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.Math.floor;
@@ -38,12 +40,12 @@ class Monster implements Monsters {
             tempHp = 1; // Ensure the monster always deals at least 1 damage
         }
         player.setHp(player.getHp() - tempHp);
-        System.out.println("The " + name + " attacks for " + tempHp + " damage. Player now has " + player.getHp() +
+        System.out.println("The " + name + " attacks for " + tempHp + " damage. com.thunder.sky.Player now has " + player.getHp() +
         " health remaining.");
         if (player.getHp() > 0) {
             defend();
         } else {
-            System.out.println("Player died!");
+            System.out.println("com.thunder.sky.Player died!");
         }
     }
 
@@ -58,12 +60,12 @@ class Monster implements Monsters {
             tempHp = 1;
         }
         hp -= tempHp;
-        System.out.println("Player attacks for " + tempHp + " damage. The " + name + " now has " + hp +
+        System.out.println("com.thunder.sky.Player attacks for " + tempHp + " damage. The " + name + " now has " + hp +
         " health remaining.");
         if (hp > 0) {
             attack();
         } else {
-            System.out.println("Monster dead");
+            System.out.println("com.thunder.sky.Monster dead");
             earnXp();
         }
     }

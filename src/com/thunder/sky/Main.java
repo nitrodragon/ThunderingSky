@@ -1,3 +1,5 @@
+package com.thunder.sky;
+
 public class Main {
     // This should be the ONLY static/functional class
 

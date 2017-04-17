@@ -1,3 +1,5 @@
+package com.thunder.sky;
+
 import static java.lang.Math.floor;
 
 class BaseCharacter {
