@@ -1,6 +1,5 @@
 package com.thunder.sky.GUI;
 
-import org.lwjgl.opengl.Display;
 import org.newdawn.slick.*;
 import org.newdawn.slick.command.*;
 import org.newdawn.slick.geom.Rectangle;
@@ -21,6 +20,7 @@ public class Menu extends BasicGameState implements InputProviderListener {
     private float frameCount = 0;
     private TrueTypeFont active;
     private TrueTypeFont inactive;
+    private TrueTypeFont fps;
     private String[] statNames = {"Attack: ", "Defence: ", "Magic: ", "Speed: "};
     private int[] statValues = {0, 0, 0, 0};
     private BasicCommand up = new BasicCommand("up");
@@ -35,27 +35,27 @@ public class Menu extends BasicGameState implements InputProviderListener {
     private boolean firstRender = true;
     private String playerName = "Villager";
 
-    public void init(GameContainer gc, StateBasedGame sbg)
-            throws SlickException {
+    public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         sb = sbg;
         InputProvider provider = new InputProvider(gc.getInput());
         provider.addListener(this);
-        Font finactive = new Font("Open Sans", Font.PLAIN, Play.width/60);
-        Font factive = new Font("Open Sans", Font.BOLD, Play.width/40);
-        active = new TrueTypeFont(factive, true);
-        inactive = new TrueTypeFont(finactive, true);
+
+        fps = new TrueTypeFont(Fonts.fpsCounter.getFont(), true);
+        active = new TrueTypeFont(Fonts.active.getFont(), true);
+        inactive = new TrueTypeFont(Fonts.inactive.getFont(), true);
+
         provider.bindCommand(new KeyControl(Input.KEY_UP), up);
         provider.bindCommand(new KeyControl(Input.KEY_DOWN), down);
         provider.bindCommand(new KeyControl(Input.KEY_LEFT), left);
         provider.bindCommand(new KeyControl(Input.KEY_RIGHT), right);
         provider.bindCommand(new KeyControl(Input.KEY_ENTER), enter);
+
         for (int i = 0; i < rect.length; i++) {
-            rect[i] = new Rectangle(100, 20 + (70 * i), statValues[i] * 40, 20);
+            rect[i] = new Rectangle(20, 20 + (70 * i), statValues[i] * 40, Play.width/60);
         }
     }
 
-    public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
-            throws SlickException {
+    public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         if (firstRender) {
             g.setBackground(Color.white);
             g.setColor(Color.black);
@@ -63,21 +63,18 @@ public class Menu extends BasicGameState implements InputProviderListener {
         for (int i = 0; i < statNames.length; i++) {
             if (pointer == i) {
                 // + (float)Math.sin(frameCount * 25)
-                g.setColor(Color.black);
                 active.drawString(20, 20 + (70 * i), statNames[i] + statValues[i], Color.black);
             } else {
-                g.setColor(Color.black);
                 inactive.drawString(20, 20 + (70 * i), statNames[i] + statValues[i], Color.black);
             }
-            active.drawString(Play.width/3, Play.height/4, playerName, Color.black);
-
             if (statValues[i] > 0) g.draw(rect[i]);
         }
+        fps.drawString(Play.width - 60, 10, "FPS: " + gc.getFPS(), Color.green); // Display FPS
+        active.drawString(Play.width/3, Play.height/4, playerName, Color.black);
         firstRender = false; // Should be last statement
     }
 
-    public void update(GameContainer gc, StateBasedGame sbg, int delta)
-            throws SlickException {
+    public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
         frameCount += 0.01;
     }
 

@@ -3,8 +3,9 @@ package com.thunder.sky.GUI;
 import org.lwjgl.opengl.Display;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
+import java.awt.Toolkit;
+import java.awt.Dimension;
 
-import java.awt.*;
 
 /**
  * Entry point for GUI version of the game.
@@ -13,12 +14,12 @@ import java.awt.*;
  */
 
 
-public class Play extends StateBasedGame {
+public final class Play extends StateBasedGame {
 
     private static final String gamename = "Thundering Sky";
     private static final int play = 0;
     private static final int fps = 60;
-    private static final boolean showFps = true;
+    private static final boolean showFps = false;
     static int width;
     static int height;
 
@@ -42,6 +43,7 @@ public class Play extends StateBasedGame {
             gameContainer.setVSync(true); // Should probably stay true for performance
             gameContainer.setDisplayMode(width, height, true);
             gameContainer.setTargetFrameRate(fps);
+            gameContainer.setShowFPS(showFps);
             Display.setInitialBackground(1, 1, 1);
             gameContainer.start();
         } catch(SlickException e) {

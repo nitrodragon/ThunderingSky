@@ -87,11 +87,12 @@ public class Player implements BasesGalore, Monsters {
         return VILLAGER;
     }
 
+    // Quick way to get the player's class name
     public static String getPlayerName(int index) {
         return characters[index].getCharacterClass();
     }
 
-    public BaseCharacter getCharacter(int index) {
+    private BaseCharacter getCharacter(int index) {
         cc = characters[index].getCharacterClass();
         BaseHP = characters[index].getHP();
         BaseAtk = characters[index].getATK();
