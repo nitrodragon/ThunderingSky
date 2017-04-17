@@ -1,4 +1,4 @@
-package com.thunder.sky.GUI;
+package com.thunder.sky;
 
 import static java.lang.Math.floor;
 public class LevelUpFormulas {
