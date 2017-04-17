@@ -45,7 +45,7 @@ public class Player implements BasesGalore, Monsters {
         Monster mnt = new Monster(this, ZOMBIE, false); // this represents the current player
     }
 
-    private int getCharacterClass(int a, int d, int m, int s) {
+    public static int getCharacterClass(int a, int d, int m, int s) {
         if (a == 0 && d == 0 && m == 0 && s == 0) return VILLAGER;
         // C1
         if (a == 1 && d == 0 && m == 0 && s == 0) return FIGHTER;
@@ -87,7 +87,11 @@ public class Player implements BasesGalore, Monsters {
         return VILLAGER;
     }
 
-    private BaseCharacter getCharacter(int index) {
+    public static String getPlayerName(int index) {
+        return characters[index].getCharacterClass();
+    }
+
+    public BaseCharacter getCharacter(int index) {
         cc = characters[index].getCharacterClass();
         BaseHP = characters[index].getHP();
         BaseAtk = characters[index].getATK();
