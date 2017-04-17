@@ -7,11 +7,10 @@ public class LevelUpFormulas {
     private int EXP;
     private int nextEXP;
 
-    private int getLevel() {
-        // TODO: Have it pull from the level value out of Player.java
-        return 0;
+    private int getLevel(Player plr) {
+        level = plr.getLevel();
+        return plr.getLevel();
     }
-
     private int calculateNext(int level, int classNum) {
         if (classNum == 0) {
             return (int) floor(((4 * level)^3) / 5);

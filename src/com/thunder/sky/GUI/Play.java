@@ -14,7 +14,7 @@ import java.awt.Dimension;
  */
 
 
-public final class Play extends StateBasedGame {
+public class Play extends StateBasedGame {
 
     private static final String gamename = "Thundering Sky";
     private static final int play = 0;

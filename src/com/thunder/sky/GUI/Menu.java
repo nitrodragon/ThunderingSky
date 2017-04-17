@@ -51,7 +51,7 @@ public class Menu extends BasicGameState implements InputProviderListener {
         provider.bindCommand(new KeyControl(Input.KEY_ENTER), enter);
 
         for (int i = 0; i < rect.length; i++) {
-            rect[i] = new Rectangle(20, 20 + (70 * i), statValues[i] * 40, Play.width/60);
+            rect[i] = new Rectangle(20, 20 + (70 * i), statValues[i] * 40, Play.width/30);
         }
     }
 
