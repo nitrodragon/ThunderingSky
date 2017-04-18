@@ -104,13 +104,6 @@ public class Player implements BasesGalore, Monsters {
         return characters[index];
     }
 
-    private int getHPStat(int base, int level, int iv, int ev) {
-        return (int) floor((((base + iv) * 2 + ((Math.sqrt(ev) / 4))) * level) / 100) + level + 10; // Hecka long formula
-    }
-
-    private int getOtherStat(int base, int level, int iv, int ev) {
-        return (int) floor((((base + iv) * 2 + ((Math.sqrt(ev) / 4))) * level) / 100) + 5; // Hecka long formula
-    }
 
     private void resetStats() {
         level = Level;
@@ -122,11 +115,11 @@ public class Player implements BasesGalore, Monsters {
     }
 
     private void setAllStats() {
-        Hp = getHPStat(BaseHP, Level, HpIV, HpEV);
-        Atk = getOtherStat(BaseAtk, Level, AtkIV, AtkEV);
-        Def = getOtherStat(BaseDef, Level, DefIV, DefEV);
-        Mag = getOtherStat(BaseMag, Level, MagIV, MagEV);
-        Spd = getOtherStat(BaseSpd, Level, SpdIV, SpdEV);
+        Hp = Formulas.getHPStat(BaseHP, Level, HpIV, HpEV);
+        Atk = Formulas.getOtherStat(BaseAtk, Level, AtkIV, AtkEV);
+        Def = Formulas.getOtherStat(BaseDef, Level, DefIV, DefEV);
+        Mag = Formulas.getOtherStat(BaseMag, Level, MagIV, MagEV);
+        Spd = Formulas.getOtherStat(BaseSpd, Level, SpdIV, SpdEV);
     }
 
     // Getters and Setters

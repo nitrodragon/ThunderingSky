@@ -5,6 +5,8 @@ import org.newdawn.slick.command.*;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.*;
 import java.awt.Font;
+import java.util.LinkedList;
+
 import org.newdawn.slick.TrueTypeFont;
 import com.thunder.sky.Player;
 
