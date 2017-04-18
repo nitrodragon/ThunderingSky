@@ -1,6 +1,7 @@
 package com.thunder.sky;
 
 import static java.lang.Math.floor;
+import static java.lang.Math.pow;
 
 /**
  * REAGAN LAND ONLY
@@ -9,6 +10,7 @@ import static java.lang.Math.floor;
  * by other classes such as players
  * and monsters.
  */
+ //interface? 
 class Formulas {
 
     static int getHPStat(int base, int level, int iv, int ev) {
@@ -21,15 +23,15 @@ class Formulas {
 
     static int calculateNext(int level, int classNum) {
         if (classNum == 0) {
-            return (int) floor(((4 * level)^3) / 5);
+            return (int) floor(pow(4 * level, 3) / 5);
         } else if (classNum == 1) {
             return level ^ 3;
         } else if (classNum == 2) {
-            return (int) floor((((6/5) * level)^3) - ((15 * level)^2) + (100 * level) - 140); // Oh dear goodness I liked the class 2s until this
+            return (int) floor((pow(((6.0/5.0)*level), 3)) - pow((15 * level), 2) + (100 * level) - 140); // Oh dear goodness I liked the class 2s until this
             // Hooray for polynomials amirite
         } else if (classNum == 3) {
-            return (int) floor(((5 * level)^3) / 4);
-        } else return 1000000;
+            return (int) floor(pow(5 * level, 3) / 4);
+        } else return 1000000; // Suck it, cheaters
     }
 
 }
