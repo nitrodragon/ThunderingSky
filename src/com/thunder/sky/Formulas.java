@@ -3,6 +3,8 @@ package com.thunder.sky;
 import static java.lang.Math.floor;
 
 /**
+ * REAGAN LAND ONLY
+ *
  * This class provides formulas used
  * by other classes such as players
  * and monsters.
