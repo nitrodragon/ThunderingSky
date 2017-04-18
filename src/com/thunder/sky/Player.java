@@ -1,7 +1,6 @@
 package com.thunder.sky;
 
 import java.util.concurrent.ThreadLocalRandom;
-import static java.lang.Math.floor;
 
 public class Player implements BasesGalore, Monsters {
 
@@ -12,7 +11,7 @@ public class Player implements BasesGalore, Monsters {
     private int BaseMag;
     private int BaseSpd;
     private String cc;
-    private BaseCharacter stats;
+    private BasePlayer stats;
     private int Level = 90;
 
     // Will be random and from the start of the game onward
@@ -92,13 +91,13 @@ public class Player implements BasesGalore, Monsters {
         return characters[index].getCharacterClass();
     }
 
-    private BaseCharacter getCharacter(int index) {
+    private BasePlayer getCharacter(int index) {
         cc = characters[index].getCharacterClass();
-        BaseHP = characters[index].getHP();
-        BaseAtk = characters[index].getATK();
-        BaseDef = characters[index].getDEF();
-        BaseMag = characters[index].getMAG();
-        BaseSpd = characters[index].getSPD();
+        BaseHP = characters[index].getHp();
+        BaseAtk = characters[index].getAtk();
+        BaseDef = characters[index].getDef();
+        BaseMag = characters[index].getMag();
+        BaseSpd = characters[index].getSpd();
         resetStats();
         setAllStats();
         return characters[index];
