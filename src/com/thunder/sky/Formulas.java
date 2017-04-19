@@ -26,7 +26,7 @@ class Formulas {
         if (classNum == 0) {
             return (int) floor(pow(4 * level, 3) / 5);
         } else if (classNum == 1) {
-            return level ^ 3;
+            return pow(level, 3);
         } else if (classNum == 2) {
             return (int) floor((pow(((6.0/5.0)*level), 3)) - pow((15 * level), 2) + (100 * level) - 140); // Oh dear goodness I liked the class 2s until this
             // Hooray for polynomials amirite
