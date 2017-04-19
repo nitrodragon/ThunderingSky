@@ -98,7 +98,7 @@ public class Menu extends BasicGameState implements InputProviderListener {
             }
         } else {
             Player player = new Player(statValues[0], statValues[1], statValues[2], statValues[3]);
-            sb.enterState(2);
+            sb.enterState(3);
             return;
         }
         playerName = Player.getPlayerName(getCharacterClass(statValues[0], statValues[1], statValues[2], statValues[3]));
