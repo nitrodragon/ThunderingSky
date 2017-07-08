@@ -2,7 +2,7 @@
 
 Thundering Sky is an in-development 8-bit Japanese-Style Role Playing Game reminiscent of NES JRPG games such as Final Fantasy, Dragon Warrior, and Secret of Mana.
 
-The game is currently in its alpha phase, although we're making hecka good progress as of our second week.
+The game is currently on hold, as we've learned that two weeks of LWJGL knowledge doesn't quite add up to a full '80s-style JRPG.
 
 © 2017 nitrodragon, EthanBar22, SirNectarine, YoshiMelon24
 
